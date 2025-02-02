@@ -12,7 +12,7 @@ class LandingPageGenerator:
         """Initialize the landing page generator with configuration."""
         self.config_path = config_path
         self.template_dir = "templates"
-        self.output_dir = "dist"
+        self.output_dir = "docs"
         self.pages_dir = "pages"
         
         # Ensure required directories exist

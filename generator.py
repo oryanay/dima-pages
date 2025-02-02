@@ -8,7 +8,7 @@ import yaml
 
 
 class LandingPageGenerator:
-    def __init__(self, config_path="config.yml"):
+    def __init__(self, config_path="config.yaml"):
         """Initialize the landing page generator with configuration."""
         self.config_path = config_path
         self.template_dir = "templates"
@@ -58,22 +58,22 @@ class LandingPageGenerator:
         results = []
         
         for page_file in os.listdir(self.pages_dir):
-            if not page_file.endswith('.yml'):
+            pprint.pprint(page_file)
+            if not page_file.endswith('.yaml'):
                 continue
                 
             try:
-                pprint(page_file)
                 # Load page data
                 page_data = self.load_page_data(page_file)
                 
                 # Generate output filename
                 output_file = os.path.join(
                     self.output_dir,
-                    page_file.replace('.yml', '.html')
+                    page_file.replace('.yaml', '.html')
                 )
                 
                 # Generate and save the page
-                html_content = self.generate_page(page_data)
+                html_content = self.generate_page(page_data, page_file)
                 with open(output_file, 'w') as f:
                     f.write(html_content)
                 

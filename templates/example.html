@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+</head>
+
+<body>
+  <h1>{{ headline }}</h1>
+  <div class="content">
+    {{ content | safe }}
+  </div>
+  {% if site_config.tracking.enabled %}
+  <!-- Add your tracking codes here -->
+  {% endif %}
+</body>
+
+</html>

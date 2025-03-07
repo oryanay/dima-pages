@@ -65,15 +65,18 @@ class LandingPageGenerator:
             try:
                 # Load page data
                 page_data = self.load_page_data(page_file)
-                
                 # Generate output filename
                 output_file = os.path.join(
                     self.output_dir,
                     page_file.replace('.yaml', '.html')
                 )
-                
+                template_file = os.path.join(
+                    self.template_dir,
+                    page_file.replace('.yaml', '.html'))
+ 
                 # Generate and save the page
-                html_content = self.generate_page(page_data, page_file)
+                pprint.pprint(template_file)
+                html_content = self.generate_page(page_data, template_file)
                 with open(output_file, 'w') as f:
                     f.write(html_content)
                 

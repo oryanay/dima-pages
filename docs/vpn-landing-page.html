@@ -26,23 +26,35 @@
     <script>
         // Make sure the DOM is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Find the link by its ID
-            var protectionLink = document.getElementById('turbovpn-protection-cta');
-            
+            // Find the turboVPN link by its ID
+            var turboVPNLink = document.getElementById('turbovpn-protection-cta');
             // Add click event listener
-            protectionLink.addEventListener('click', function(e) {
+            turboVPNLink.addEventListener('click', function(e) {
                 // Send the click event to Google Analytics
-                gtag('event', 'cta_click', {
-                    'button_id': 'protection-cta',
+                gtag('event', 'turbovpn_cta_click', {
+                    'button_id': 'turbovpn-protection-cta',
                     'button_text': this.innerText.trim(),
                     'button_location': 'main_section',
                     'destination_url': this.href,
                     'discount_amount': '70%'
                 });
-                
-                console.log('Protection CTA clicked and event sent to GA4');
-                
-                // Note: The link will still work normally after tracking
+            
+                console.log('TurboVPN CTA clicked and event sent to GA4');
+            });
+
+            // Find the FRKN VPN link by its ID
+            var FRKNVPNLink = document.getElementById('frkn-vpn-cta');
+            // Add click event listener
+            FRKNVPNLink.addEventListener('click', function(e) {
+                // Send the click event to Google Analytics
+                gtag('event', 'frkn_cta_click', {
+                    'button_id': 'frkn-vpn-cta',
+                    'button_text': this.innerText.trim(),
+                    'button_location': 'main_section',
+                    'destination_url': this.href,
+                });
+            
+                console.log('FRKN VPN CTA clicked and event sent to GA4');
             });
         });
     </script>
@@ -162,7 +174,7 @@
                             <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 24/7 customer support</li>
                         </ul>
                     </div>
-                    <a href="https://0r3ts.bemobtrcks.com/go/a267ad84-a26d-49ed-adab-3018e2003911?" class="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition">
+                    <a href="https://0r3ts.bemobtrcks.com/go/a267ad84-a26d-49ed-adab-3018e2003911?" id="frkn-vpn-cta" class="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition">
                         Special Offer - 65% OFF
                     </a>
                 </div>

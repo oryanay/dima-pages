@@ -7,9 +7,45 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
-      gtag('config', 'G-HCV4ZRZ56Z');
+      gtag('config', 'G-HCV4ZRZ56Z');  
     </script>
-
+    <!-- GA4 Event Tracking for the CTA button -->
+    <script>
+        document.getElementById('main-cta').addEventListener('click', function() {
+            // Send the click event to Google Analytics
+            gtag('event', 'cta_click', {
+                'button_id': 'main-cta',
+                'button_text': this.innerText,
+                'button_location': 'hero_section'
+            });
+            
+            console.log('Button clicked and event sent to GA4');
+        });
+    </script>
+    <!-- GA4 tracking code -->
+    <script>
+        // Make sure the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find the link by its ID
+            var protectionLink = document.getElementById('turbovpn-protection-cta');
+            
+            // Add click event listener
+            protectionLink.addEventListener('click', function(e) {
+                // Send the click event to Google Analytics
+                gtag('event', 'cta_click', {
+                    'button_id': 'protection-cta',
+                    'button_text': this.innerText.trim(),
+                    'button_location': 'main_section',
+                    'destination_url': this.href,
+                    'discount_amount': '70%'
+                });
+                
+                console.log('Protection CTA clicked and event sent to GA4');
+                
+                // Note: The link will still work normally after tracking
+            });
+        });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stay Safe on Public WiFi | VPN Protection Guide</title>
@@ -109,7 +145,7 @@
                             <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 30-day money-back guarantee</li>
                         </ul>
                     </div>
-                    <a href="https://0r3ts.bemobtrcks.com/go/0ac434af-809d-4f66-a2d1-74e0c7814b37?" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+                    <a href="https://0r3ts.bemobtrcks.com/go/0ac434af-809d-4f66-a2d1-74e0c7814b37?" id="turbovpn-protection-cta" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
                         Get Protected Now - 70% OFF
                     </a>
                 </div>

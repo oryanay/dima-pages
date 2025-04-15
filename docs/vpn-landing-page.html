@@ -6,8 +6,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
-      gtag('config', 'G-HCV4ZRZ56Z');  
 
       // Manual UTM injection to guarantee attribution
       const urlParams = new URLSearchParams(window.location.search);
@@ -16,7 +14,17 @@
       const campaign = urlParams.get('utm_campaign');
       const content = urlParams.get('utm_content');
       const term = urlParams.get('utm_term');
-    
+        
+      gtag('config', 'G-HCV4ZRZ56Z', {
+          campaign_source: source,
+          campaign_medium: medium,
+          campaign_name: campaign,
+          campaign_content: content,
+          campaign_term: term
+        });  
+
+      
+        /*    
       if (source || medium || campaign || content || term) {
         gtag('event', 'page_view', {
           campaign_source: source,
@@ -26,6 +34,7 @@
           campaign_term: term
         });
       }  
+      */
     </script>
     <!-- GA4 Event Tracking for the CTA button -->
     <script>

@@ -13,7 +13,8 @@
     <link rel="icon" type="image/png" href="/static/images/favicon.png">
     <!-- CSS: Mobile-Optimized -->
     <link rel="stylesheet" href="../static/css/style.css">
-    <!-- GA4 -->
+    
+    <!-- GA4 tracking code -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCV4ZRZ56Z"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -21,6 +22,10 @@
       gtag('js', new Date());
       gtag('config', 'G-HCV4ZRZ56Z');
     </script>
+
+    <!-- Umami tracking code -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="84ecacce-4796-4cd7-a5a6-b3fcb109866b"></script>
+
     <!-- Open Graph (for native/social previews) -->
       <meta property="og:title" content="Minimalist Jewelry for Men">
       <meta property="og:description" content="Discover timeless minimalist jewelry designed in Tel Aviv.">
@@ -35,15 +40,20 @@
     <!-- Subheadline -->
     <p>Minimalist pieces handcrafted to elevate his look — clean, bold, timeless.</p>
     <!-- Hero Image -->
-    <img src="../static/images/hero1.webp" alt="Hero Image">
+    <img src="../static/images/hero1.webp" 
+        alt="Hero Image"
+        data-umami-event="Hero Image"
+        data-umami-event-id="123"
+    >
     <!-- CTA -->
     <a href="https://shaniandadi.com/collections/men" 
         class="cta-button track-cta" 
+        data-umami-event="CTA Button"
         data-dest="https://shaniandadi.com/collections/men">
         Shop Now
     </a>
   </div>
     <footer>Shani & Adi – Handmade in Tel Aviv</footer>
-    <script src="../static/js/script.js"></script>
+    <script src="../static/js/lp-tracker.js"></script>
 </body>
 </html>

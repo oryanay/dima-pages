@@ -1,0 +1,38 @@
+body {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    direction: rtl;
+    background-color: #ffffff;
+    color: #222;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+  }
+  
+  header {
+    text-align: center;
+    border-bottom: .1rem solid rgba(var(--color-foreground),.08);
+  }
+
+  main {
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+  
+  h1 {
+    font-size: 30px;
+    text-align: right;
+    margin-bottom: 1.5rem;
+  }
+  
+  p {
+    margin: 1rem 0;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

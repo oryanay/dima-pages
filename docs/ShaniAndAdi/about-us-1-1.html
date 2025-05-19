@@ -5,6 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShaniAndAdi</title>
   <link rel="stylesheet" href="theme/css/about-us-1-1.css">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCV4ZRZ56Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HCV4ZRZ56Z');
+  </script>
+
+  <!-- Umami Analytics -->
+  <script async defer
+    src="https://cloud.umami.is/script.js" 
+    data-website-id="84ecacce-4796-4cd7-a5a6-b3fcb109866b">
+  </script>
+
+  <!-- Outbrain Pixel -->
+  <script data-obct type = "text/javascript">
+    /** DO NOT MODIFY THIS CODE**/
+    !function(_window, _document) {
+      var OB_ADV_ID = '005542eae5b024c0adfd62c9b0b952d50a';
+      if (_window.obApi) {
+        var toArray = function(object) {
+          return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
+        };
+        _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
+        return;
+      }
+      var api = _window.obApi = function() {
+        api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
+      };
+      api.version = '1.1';
+      api.loaded = true;
+      api.marketerId = OB_ADV_ID;
+      api.queue = [];
+      var tag = _document.createElement('script');
+      tag.async = true;
+      tag.src = '//amplify.outbrain.com/cp/obtp.js';
+      tag.type = 'text/javascript';
+      var script = _document.getElementsByTagName('script')[0];
+      script.parentNode.insertBefore(tag, script);
+    }(window, document);
+
+    //obApi('track', 'PAGE_VIEW');
+  </script>
+
 </head>
 <body>
     <main class="story-page" dir="rtl" lang="he">
@@ -21,11 +67,21 @@
       </header>
 
       <section class="hero">
-        <img src="theme/images/founders.webp" alt="שני ועדי בסטודיו" class="hero-image" loading="lazy">
+         <a href="https://shaniandadi.co.il/?utm_source=ob_wexplainx_lp&utm_medium=about_us_1_1&utm_campaign=first_bloom&utm_content=hero_image_cta" 
+          class="image-link"
+          onclick="trackClickEvent('hero_image_click')"
+          target="_blank">
+        <img 
+          src="theme/images/founders.webp" 
+          alt="שני ועדי בסטודיו" class="hero-image" loading="lazy">
+        </a>
       </section>
 
       <section class="cta top-cta">
-        <a href="https://shaniandadi.co.il" class="button primary-cta">
+        <a href="https://shaniandadi.co.il/?utm_source=ob_wexplainx_lp&utm_medium=about_us_1_1&utm_campaign=first_bloom&utm_content=cta_button" 
+          class="button primary-cta"
+          onclick="trackClickEvent('cta_button_click')"
+          target="_blank">
           ✨ אני רוצה לראות את הקולקציה ✨
         </a>
       </section>
@@ -57,11 +113,20 @@
       <hr class="divider" />
 
       <footer class="site-footer">
-        <p>👩‍❤️‍👩 נשמח לארח אותך באתר הרשמי שלנו:</p>
-        <a href="https://shaniandadi.co.il" class="footer-link">ShaniAndAdi.co.il</a>
+        <p>נשמח לארח אותך באתר הרשמי שלנו:</p>
+        <a href="https://shaniandadi.co.il/?utm_source=ob_wexplainx_lp&utm_medium=about_us_1_1&utm_campaign=first_bloom&utm_content=footer_link" 
+          class="footer-link"
+          onclick="trackClickEvent('footer_link_click')"
+          target="_blank">
+          ShaniAndAdi.co.il
+        </a>
+        <p>👩‍❤️‍👩</p>
       </footer>
     </article>
   </div>
 </main>
+  
+  <!-- Load event tracking -->
+  <script src="theme/js/tracking-events-1-1.js"></script>
 </body>
 </html>

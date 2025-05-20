@@ -1,8 +1,47 @@
 (function () {
     const pagePath = window.location.pathname;
     const scrollTracked = new Set();
-    const scrollThresholds = [25, 50, 90];
+    const scrollThresholds = [25, 75, 90];
     const timeMilestones = [1, 3, 5, 10];
+    let engagementState = {
+        minEngagementFired: false,
+        normalEngagementFired: false,
+        ctaClickFired: false
+      };
+      
+    function sendOutbrainEvent(eventName) {
+        if (typeof obApi !== 'function') return;
+        
+        switch (eventName) {
+            /*case 'page_view':
+            obApi('track', 'PAGE_VIEW');
+            break;*/
+        
+            case 'time_on_page_3s':
+            case 'scroll_depth_25':
+            case 'hero_image_click':
+            if (!engagementState.minEngagementFired) {
+                obApi('track', 'MIN_ENGAGEMENT');
+                engagementState.minEngagementFired = true;
+            }
+            break;
+            
+            case 'scroll_depth_75':
+            if (!engagementState.normalEngagementFired) {
+                obApi('track', 'NORMAL_ENGAGEMENT');
+                engagementState.normalEngagementFired = true;
+            }
+            break;
+
+            case 'cta_button_click':
+            case 'footer_link_click':
+            if (!engagementState.ctaClickFired) {
+                obApi('track', 'CTA_CLICK');
+                engagementState.ctaClickFired = true;
+            }
+            break;
+        }
+    }
   
     // === Multi-Platform Event Dispatcher ===
     function trackEvent(eventName) {
@@ -16,10 +55,8 @@
             gtag('event', eventName);
         }
 
-        // Outbrain (simple event name only)
-        if (typeof obApi === 'function') {
-            obApi('track', eventName.toUpperCase());
-        }
+        // Outbrain 
+        sendOutbrainEvent(eventName)
 
         console.log(`Event sent: ${eventName}`);
     }

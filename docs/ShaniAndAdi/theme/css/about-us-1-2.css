@@ -1,0 +1,78 @@
+.container {
+    max-width: 680px;
+    margin: auto;
+    padding: 0 1.5rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+  
+  .divider {
+    width: 50%;
+    margin: 1rem auto;
+    border: none;
+    border-top: 1px solid #eee;
+  }
+  
+  .subhead {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  
+  .hero-image {
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  
+  .top-cta {
+    text-align: center;
+    margin: 1rem 0 2rem;
+  }
+
+  .bottom-cta {
+    text-align: center;
+    margin: 3rem 0 0;
+  }
+
+  .button.primary-cta {
+    background: linear-gradient(135deg, #111, #333);
+    color: #fff; 
+    border-radius: 999px;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 1.1rem 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .button.primary-cta:hover {
+    transform: scale(1.04);
+  }
+  
+  .site-footer {
+    text-align: center;
+    /*margin-top: 2rem;*/
+    font-size: 0.9rem;
+    color: #555;
+    padding-bottom: 2rem;
+  }
+  
+  .footer-link {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #111;
+  }
+  .footer-link:hover {
+    color: #000;
+  }

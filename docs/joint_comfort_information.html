@@ -15,12 +15,17 @@
         ></script>
 
         <script>
-            // Optional: basic click tracking
-            document
-                .getElementById("cta")
-                .addEventListener("click", function () {
-                    console.log("CTA clicked");
-                });
+            function getParam(name) {
+                return new URLSearchParams(window.location.search).get(name);
+            }
+
+            umami.track("visit_meta", {
+                campaign_id: getParam("campaignid"),
+                banner_id: getParam("bannerid"),
+                region: getParam("region"),
+                zone_id: getParam("zoneid"),
+                subzone_id: getParam("subzone_id"),
+            });
         </script>
 
         <style>

@@ -15,16 +15,26 @@
         ></script>
 
         <script>
+            function waitForUmami(cb) {
+                if (window.umami) {
+                    cb();
+                } else {
+                    setTimeout(() => waitForUmami(cb), 100);
+                }
+            }
+
             function getParam(name) {
                 return new URLSearchParams(window.location.search).get(name);
             }
 
-            umami.track("visit_meta", {
-                campaign_id: getParam("campaignid"),
-                banner_id: getParam("bannerid"),
-                region: getParam("region"),
-                zone_id: getParam("zoneid"),
-                subzone_id: getParam("subzone_id"),
+            waitForUmami(() => {
+                umami.track("visit_meta", {
+                    campaign_id: getParam("campaignid"),
+                    banner_id: getParam("bannerid"),
+                    region: getParam("region"),
+                    zone_id: getParam("zoneid"),
+                    subzone_id: getParam("subzone_id"),
+                });
             });
         </script>
 
